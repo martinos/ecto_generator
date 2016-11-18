@@ -20,7 +20,7 @@ defmodule <%= app <> "." <> module_name %> do
   #IF PRIMARY KEY IS NOT `id` OR YOU HAVE MULTIPLE PRIMARY KEYS -> UNCOMMENT THE FOLLOWING LINE
   #@primary_key false
   schema "<%= table %>" do<%= for column <- columns do %>
-    field :<%= String.downcase(elem(column,0)) %>, <%= elem(column, 1) %><%= if elem(column, 2) do %>, primary_key: true<% end %><% end %>
+    field :<%= elem(column,0) %>, <%= elem(column, 1) %><%= if elem(column, 2) do %>, primary_key: true<% end %><% end %>
   end
 end
 """
